@@ -25,6 +25,7 @@ jobs:
     - name: Build and Push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: ./app                      # 👈 path to the build context
+        file: ./app/Dockerfile              # 👈 path to the Dockerfile
         push: true
         tags: satheesh2003/flask-devops-app:v4
