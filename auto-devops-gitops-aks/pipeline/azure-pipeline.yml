@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'flask-devops-app'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: '<your-ACR-or-DockerHub-service-connection>'
+    repository: 'satheesh2003/$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: 'app/Dockerfile'
+    tags: |
+      v1
+      latest
