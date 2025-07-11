@@ -16,7 +16,7 @@ steps:
     displayName: Build and Push to Docker Hub
     inputs:
       command: buildAndPush
-      containerRegistry: $(dockerHubConnection)
+      containerRegistry: docker-hub-conn 
       repository: $(imageRepository)
       tags: |
         $(imageTag)
