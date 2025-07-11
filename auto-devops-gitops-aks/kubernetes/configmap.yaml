@@ -1,7 +1,0 @@
-# configmap.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: flask-config
-data:
-  GREETING: "Hello from ConfigMap"
