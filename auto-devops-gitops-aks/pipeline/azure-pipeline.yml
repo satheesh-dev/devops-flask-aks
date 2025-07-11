@@ -1,15 +1,14 @@
 trigger:
   - main
 
-variables:
-  dockerHubConnection: 'docker-hub-conn'  # your Docker service connection name
-  imageRepository: 'satheesh2003/flask-devops-app'
-  imageTag: 'v5'
-
 pool:
   name: Default
   demands:
     - Agent.Name -equals SATHEESH
+
+variables:
+  imageName: satheesh2003/flask-devops-app
+  imageTag: v4
 
 steps:
   - script: |
@@ -20,11 +19,8 @@ steps:
     displayName: Build and Push to Docker Hub
     inputs:
       command: buildAndPush
-      containerRegistry: docker-hub-conn 
-      repository: $(imageRepository)
+      containerRegistry: 'dummy'  # won't be used since we logged in manually
+      repository: $(imageName)
       tags: |
         $(imageTag)
-
-  - script: echo "🎉 Build & push successful!"
-    displayName: Done
 
