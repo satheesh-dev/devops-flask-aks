@@ -7,7 +7,9 @@ variables:
   imageTag: 'v5'
 
 pool:
-  vmImage: 'ubuntu-latest'  # ✅ Use Microsoft-hosted agent for Docker
+  name: Default
+  demands:
+    - Agent.Name -equals SATHEESH
 
 steps:
   - task: Docker@2
