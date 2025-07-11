@@ -28,4 +28,4 @@ jobs:
         context: ./app                      # 👈 path to the build context
         file: ./app/Dockerfile              # 👈 path to the Dockerfile
         push: true
-        tags: satheesh2003/flask-devops-app:v4
+        tags: satheesh2003/flask-devops-app:v5
